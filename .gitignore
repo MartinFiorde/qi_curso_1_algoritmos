@@ -1,5 +1,19 @@
+# Netbeans
 /qi_curso_1_algoritmos/nbproject/private/
 /qi_curso_1_algoritmos/build/
 /qi_curso_1_algoritmos/nbproject/
 build.xml
 manifest.mf
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+#Custom
+/.idea/
+qi_curso_1_algoritmos.iml
