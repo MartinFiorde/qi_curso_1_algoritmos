@@ -1,31 +1,31 @@
-package c1_linear_search;
+package com.qi.curso_1_algoritmos.c1_linear_search;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class LinearSearch {
     public static void main(String[] args) {
-        String[] array = generateArray();
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        String[] array = generateArray();
 
-        System.out.println("("+Arrays.asList(array).size()+") "+Arrays.asList(array).toString());
+        System.out.println("("+Arrays.asList(array).size()+") "+Arrays.asList(array));
         System.out.print("Ingresa la palabra a buscar: ");
-        String palabraABuscar = scanner.nextLine();
+        String wordToFind = scanner.nextLine();
 
-        int indiceEncontrado = linealSearch(array, palabraABuscar);
+        int indexFound = linealSearch(array, wordToFind);
 
-        if (indiceEncontrado != -1) {
-            System.out.println("La palabra '" + palabraABuscar + "' fue encontrada en el índice " + indiceEncontrado);
+        if (indexFound != -1) {
+            System.out.println("La palabra '" + wordToFind + "' fue encontrada en el índice " + indexFound);
         } else {
-            System.out.println("La palabra '" + palabraABuscar + "' no fue encontrada en el array.");
+            System.out.println("La palabra '" + wordToFind + "' no fue encontrada en el array.");
         }
 
         scanner.close();
     }
 
-    public static int linealSearch(String[] array, String elemento) {
+    public static int linealSearch(String[] array, String wordToFind) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i].equals(elemento)) {
+            if (array[i].equals(wordToFind)) {
                 return i;
             }
         }
