@@ -2,23 +2,28 @@ package com.qi.curso_1_algoritmos.module_1_search;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class C1LinearSearch {
+
+    private static final Logger logger = Logger.getLogger(C1LinearSearch.class.getName());
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         String[] array = generateArray();
 
-        System.out.println("("+Arrays.asList(array).size()+") "+Arrays.asList(array));
-        System.out.print("Ingresa la palabra a buscar: ");
+        logger.info(() -> String.format("(%d) %s", Arrays.asList(array).size(), Arrays.asList(array)));
+        logger.info("Ingresa la palabra a buscar: ");
         String wordToFind = scanner.nextLine();
 
         int indexFound = linealSearch(array, wordToFind);
 
+        String msg2;
         if (indexFound != -1) {
-            System.out.println("La palabra '" + wordToFind + "' fue encontrada en el índice " + indexFound);
+            msg2 = "La palabra '" + wordToFind + "' fue encontrada en el índice " + indexFound;
         } else {
-            System.out.println("La palabra '" + wordToFind + "' no fue encontrada en el array.");
+            msg2 = "La palabra '" + wordToFind + "' no fue encontrada en el array.";
         }
+        logger.info(msg2);
 
         scanner.close();
     }

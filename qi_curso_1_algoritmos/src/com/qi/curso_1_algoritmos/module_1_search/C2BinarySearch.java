@@ -8,31 +8,35 @@ public class C2BinarySearch {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
-        int[] array = generateArray();
 
+        int[] array = generateArray();
         logger.info("Ingresa el numero a buscar: ");
         int itemToFind = scanner.nextInt();
         int indexFound = binarySearch(array, 0, array.length, itemToFind);
-        //int indexFound = binarySearch2(array, itemToFind);
         informResult(indexFound, itemToFind);
+
+        int[] array2 = generateArrayWithNegativeNumbers();
+        logger.info("Ingresa el numero a buscar: ");
+        int itemToFind2 = scanner.nextInt();
+        int indexFound2 = binarySearch2(array2, itemToFind2);
+        informResult(indexFound2, itemToFind2);
 
         scanner.close();
     }
 
     private static void informResult(int indexFound, int itemToFind) {
         if (indexFound != -1) {
-            String msg = String.format("El valor '%s' fue encontrado en el índice %d", itemToFind, indexFound);
-            logger.info(msg);
+            logger.info(() -> String.format("El valor '%s' fue encontrado en el índice %d", itemToFind, indexFound));
         } else {
-            String msg = String.format("El valor '%s' no fue encontrado en el array.", itemToFind);
-            logger.info(msg);
+            logger.info(() -> String.format("El valor '%s' no fue encontrado en el array.", itemToFind));
         }
     }
 
     // personal solution
     private static int binarySearch(int[] array, int min, int max, int itemToFind) {
         int middle = min + (max - min) / 2;
-        logger.info(String.valueOf(middle));
+        String msg = String.valueOf(middle);
+        logger.info(msg);
         if (middle == min || middle == max) return -1;
 
         if (itemToFind < array[middle]) middle = binarySearch(array, min, middle, itemToFind);
@@ -47,6 +51,7 @@ public class C2BinarySearch {
         int top = array.length;
         do {
             int middle = low + (top - low) / 2;
+            logger.info(() -> String.valueOf(middle));
             int value = array[middle];
             if (value == itemToFind) return middle;
             else if (value < itemToFind) low = middle + 1; //incluye valor minimo, excluye valor maximo
@@ -64,8 +69,7 @@ public class C2BinarySearch {
                 string.append(", ");
             }
         }
-        String msg = string.toString();
-        logger.info(msg);
+        logger.info(string::toString);
     }
 
     private static int[] generateArray() {
