@@ -1,9 +1,9 @@
-package com.qi.curso_1_algoritmos.c1_linear_search;
+package com.qi.curso_1_algoritmos.module_1_search;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class LinearSearch {
+public class C1LinearSearch {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         String[] array = generateArray();

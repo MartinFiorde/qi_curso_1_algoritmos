@@ -1,10 +1,10 @@
-package com.qi.curso_1_algoritmos.c2_binary_search;
+package com.qi.curso_1_algoritmos.module_1_search;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class BinarySearch {
-    private static final Logger logger = Logger.getLogger(BinarySearch.class.getName());
+public class C2BinarySearch {
+    private static final Logger logger = Logger.getLogger(C2BinarySearch.class.getName());
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
