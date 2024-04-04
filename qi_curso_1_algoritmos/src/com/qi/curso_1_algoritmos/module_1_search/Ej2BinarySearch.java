@@ -3,8 +3,8 @@ package com.qi.curso_1_algoritmos.module_1_search;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class C2BinarySearch {
-    private static final Logger logger = Logger.getLogger(C2BinarySearch.class.getName());
+public class Ej2BinarySearch {
+    private static final Logger logger = Logger.getLogger(Ej2BinarySearch.class.getName());
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");

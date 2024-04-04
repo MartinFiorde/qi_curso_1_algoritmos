@@ -3,8 +3,8 @@ package com.qi.curso_1_algoritmos.module_1_search;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class C3TwoCristalBallProblem {
-    private static final Logger logger = Logger.getLogger(C3TwoCristalBallProblem.class.getName());
+public class Ej3TwoCristalBallProblem {
+    private static final Logger logger = Logger.getLogger(Ej3TwoCristalBallProblem.class.getName());
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");

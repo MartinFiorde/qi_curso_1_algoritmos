@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class C1LinearSearch {
+public class Ej1LinearSearch {
 
-    private static final Logger logger = Logger.getLogger(C1LinearSearch.class.getName());
+    private static final Logger logger = Logger.getLogger(Ej1LinearSearch.class.getName());
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
         String[] array = generateArray();
