@@ -1,9 +1,11 @@
-package com.qi.curso_1_algoritmos.module_2_sort;
+package com.module_2_sort;
 
-import java.util.Arrays;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+@Slf4j
 public class Ej1BubbleSort {
     private static final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
     private static final Logger logger = Logger.getLogger(Ej1BubbleSort.class.getName());

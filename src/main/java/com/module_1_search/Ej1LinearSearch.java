@@ -1,4 +1,4 @@
-package com.qi.curso_1_algoritmos.module_1_search;
+package com.module_1_search;
 
 import java.util.Arrays;
 import java.util.Scanner;
