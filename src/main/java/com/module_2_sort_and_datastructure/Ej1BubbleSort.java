@@ -1,4 +1,4 @@
-package com.module_2_sort;
+package com.module_2_sort_and_datastructure;
 
 import lombok.extern.slf4j.Slf4j;
 
