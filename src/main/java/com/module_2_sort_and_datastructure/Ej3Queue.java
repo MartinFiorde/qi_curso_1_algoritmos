@@ -75,11 +75,10 @@ class QueueV1<T> implements QueueCourseImplementation<T> {
         Node<T> newTail = new Node<>(item, null);
         if (length == 0) {
             head = newTail;
-            tail = newTail;
         } else {
             tail.next = newTail;
-            tail = newTail;
         }
+        tail = newTail;
         length++;
 
     }
@@ -157,7 +156,7 @@ class QueueTeacherExample<T> implements QueueCourseImplementation<T> {
             this.tail = newTail;
             this.head = newTail;
         }
-        this.tail.next = newTail; // TODO: falla menor en el ejemplo del curso. cuando se agrega el primer elemento, esta operación no debería ejecutarse porque genera un next autoreferencial. al agregar un segundo elemento se soluciona esta inconsistencia
+        this.tail.next = newTail; // TODO: NOTA falla menor en el ejemplo del curso. cuando se agrega el primer elemento, esta operación no debería ejecutarse porque genera un next autoreferencial. al agregar un segundo elemento se soluciona esta inconsistencia
         this.tail = newTail;
     }
 
@@ -167,12 +166,12 @@ class QueueTeacherExample<T> implements QueueCourseImplementation<T> {
             return null;
         }
         length--;
-        Node<T> head = this.head;
+        Node<T> dequeueNode = this.head;
         this.head = this.head.next;
         if (length == 0) tail = null;
 
-        head.next = null; // opcional book keeping
-        return head.value;
+        dequeueNode.next = null; // opcional bookkeeping
+        return dequeueNode.value;
     }
 
     public T peek() {
