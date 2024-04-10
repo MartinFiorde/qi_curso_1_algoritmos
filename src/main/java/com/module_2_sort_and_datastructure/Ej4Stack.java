@@ -9,8 +9,8 @@ public class Ej4Stack {
     public static void main(String[] args) {
         StackCourseImplementation<String> stackV1 = new StackV1<>();
         testFunctionality(stackV1);
-//        StackCourseImplementation<String> stackTeacherExample = new StackTeacherExample<>();
-//        testFunctionality(stackTeacherExample);
+        StackCourseImplementation<String> stackTeacherExample = new StackTeacherExample<>();
+        testFunctionality(stackTeacherExample);
     }
 
     private static void testFunctionality(StackCourseImplementation<String> queue) {
@@ -115,6 +115,71 @@ class StackV1<T> implements StackCourseImplementation<T> {
         StringBuilder string = new StringBuilder();
         string.append("\n").append("length: ").append(getLength()).append(" - tail: ").append(tail != null ? tail.value : "null").append("\n");
         Node<T> node = tail;
+        for (int i = 0; i < length; i++) {
+            if (node != null) {
+                string
+                        .append("[ i: ").append(i)
+                        .append(" - value: ").append(node.value)
+                        .append(" - previous: ").append(node.previous == null ? "null" : node.previous.value)
+                        .append("] - \n");
+                node = node.previous;
+            }
+        }
+        return string.toString();
+    }
+}
+
+@Slf4j
+class StackTeacherExample<T> implements StackCourseImplementation<T> {
+
+    @Getter
+    private int length;
+    private Node<T> head;
+
+    public StackTeacherExample() {
+        length = 0;
+        head = null;
+    }
+
+    public void push(T item) {
+        Node<T> newNode = new Node<>();
+        newNode.value = item;
+        length++;
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        newNode.previous = this.head;
+        this.head = newNode;
+    }
+
+    public T pop() {
+        this.length = Math.max(0, this.length - 1);
+        if (this.length == 0) {
+            Node<T> popNode = this.head;
+            this.head = null;
+            return popNode != null ? popNode.value : null;
+        }
+        Node<T> popNode = this.head;
+        this.head = popNode.previous;
+        return popNode.value;
+    }
+
+    public T peek() {
+        return head != null ? head.value : null;
+    }
+
+    private static class Node<T> {
+        T value;
+        Node<T> previous;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder string = new StringBuilder();
+        string.append("\n").append("length: ").append(getLength()).append(" - tail: ").append(head != null ? head.value : "null").append("\n");
+        Node<T> node = head;
         for (int i = 0; i < length; i++) {
             if (node != null) {
                 string
