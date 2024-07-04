@@ -1,0 +1,12 @@
+function print(i) {
+	console.log("MAF: " +i)
+};
+
+function asyncForEach(array, cb) {
+	array.forEach((i) => {
+		setTimeout(() => console.log("MAF: "+i), 1000);
+	});
+};
+
+asyncForEach([5,6,7,8],print);
+[1,2,3,4].forEach(print);
