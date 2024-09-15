@@ -3,6 +3,7 @@ package primagenalgorithms.module_2_sort_and_datastructures;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
+// INTERNAL STRUCTURE INCOMPATIBLE WITH JAVA 21 COMPILATION
 @Slf4j
 public class Ej4Stack {
 

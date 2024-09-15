@@ -9,9 +9,9 @@
 
 
   <properties>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
-    <maven.compiler.release>21</maven.compiler.release>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -28,8 +28,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.13.0</version>
         <configuration>
-          <source>21</source>
-          <target>21</target>
+          <source>17</source>
+          <target>17</target>
         </configuration>
       </plugin>
     </plugins>
@@ -51,7 +51,7 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Dependencia Lombok -->
+    <!-- Lombok - @Slf4j INCOMPATIBLE WITH JAVA 21-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -59,7 +59,7 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- Dependencia SLF4J -->
+    <!-- Dependencia SLF4J - @Slf4j INCOMPATIBLE WITH JAVA 21 -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
