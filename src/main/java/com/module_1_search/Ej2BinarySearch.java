@@ -48,15 +48,14 @@ public class Ej2BinarySearch {
     // course solution
     private static int binarySearch2(int[] array, int itemToFind) {
         int low = 0;
-        int top = array.length;
+        int top = array.length - 1;
         do {
             int middle = low + (top - low) / 2;
             logger.info(() -> String.valueOf(middle));
-            int value = array[middle];
-            if (value == itemToFind) return middle;
-            else if (value < itemToFind) low = middle + 1; //incluye valor minimo, excluye valor maximo
-            else top = middle;
-        } while (low < top); //no <=, porque el minimo se incluye, y el maximo se excluye. si fuera <= entraría en un estado roto
+            if (array[middle] == itemToFind) return middle;
+            else if (array[middle] < itemToFind) low = middle + 1;
+            else top = middle - 1;
+        } while (low <= top);
         return -1;
     }
 
