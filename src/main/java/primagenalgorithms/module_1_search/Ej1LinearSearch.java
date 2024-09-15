@@ -1,4 +1,4 @@
-package com.module_1_search;
+package primagenalgorithms.module_1_search;
 
 import java.util.Arrays;
 import java.util.Scanner;

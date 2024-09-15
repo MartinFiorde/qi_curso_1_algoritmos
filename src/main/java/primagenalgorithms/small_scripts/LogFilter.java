@@ -1,4 +1,4 @@
-package com.small_scripts;
+package primagenalgorithms.small_scripts;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
